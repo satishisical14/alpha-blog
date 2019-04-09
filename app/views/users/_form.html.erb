@@ -1,0 +1,28 @@
+<% if @user.errors.any? %>
+<h2> Erros </h2>
+<ul>
+	<% @user.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+	<p>
+		<%= f.label :Username %><br/>
+		<%= f.text_field :username %><br/>
+	</p>
+	<p>
+		<%= f.label :Email %><br/>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.label :Password %><br/>
+		<%= f.password_field :password %>
+	</p>
+	<p>
+		<%= f.submit "Sign Up" %>
+	</p>
+<% end %>
+
+<%= link_to 'Back to list', users_path %>
