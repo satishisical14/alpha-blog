@@ -1,5 +1,9 @@
 <h1> List Articles </h1>
+<div>
+	<%= will_paginate %>
+</div>
 <%= link_to 'Create new article', new_article_path %>
+
 
 <table>
 	<tr>
@@ -7,7 +11,7 @@
 		<th> Description </th>
 	</tr>
 
-	<% @article.each do |article| %>
+	<% @articles.each do |article| %>
 		<tr>
 			<td> <%= article.title %></td>
 			<td> <%= article.description %></td>
@@ -18,4 +22,8 @@
 	<% end %>
 </table>
 
+
 <%= link_to 'Back to list', articles_path %>
+<div>
+	<%= will_paginate %>
+</div>
